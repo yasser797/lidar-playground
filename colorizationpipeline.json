@@ -1,0 +1,22 @@
+{
+    "pipeline": [
+        {
+            "type": "readers.las",
+            "filename": "/mnt/c/Users/ybinb/VS/lidar-processing/SaMo_topo.laz"
+        },
+        {
+            "type": "filters.colorization",
+            "raster": "/mnt/c/Users/ybinb/VS/lidar-processing/data/tiles/santa_monica_2016_1.tif" 
+        },
+        {
+            "type": "filters.range",
+            "limits": "Red[1:]"
+        },
+        {
+            "type": "writers.las",
+            "minor_version": "2",
+            "dataformat_id": "3",
+            "filename": "/mnt/c/Users/ybinb/VS/lidar-processing/data/santa_monica_2016_1.las"
+        }
+    ]
+}
