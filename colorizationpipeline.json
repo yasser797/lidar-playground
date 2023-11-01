@@ -1,12 +1,9 @@
 {
     "pipeline": [
-        {
-            "type": "readers.las",
-            "filename": "/mnt/c/Users/ybinb/VS/lidar-processing/SaMo_topo.laz"
-        },
+        "./SaMo_topo.laz",
         {
             "type": "filters.colorization",
-            "raster": "/mnt/c/Users/ybinb/VS/lidar-processing/data/tiles/santa_monica_2016_1.tif" 
+            "raster": "./data/tiles/santa_monica_2016_4.tif" 
         },
         {
             "type": "filters.range",
@@ -16,7 +13,7 @@
             "type": "writers.las",
             "minor_version": "2",
             "dataformat_id": "3",
-            "filename": "/mnt/c/Users/ybinb/VS/lidar-processing/data/santa_monica_2016_1.las"
+            "filename": "./data/testData/santa_monica_2016_4.las"
         }
     ]
 }
