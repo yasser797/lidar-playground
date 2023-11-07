@@ -21,7 +21,7 @@ def las_to_ply(las_file_path, output_ply_path, voxel_size=0.1):
     pcd.colors = o3d.utility.Vector3dVector(colors / 255)  # if 16-bit color, divide by 65535
     
     
-    # downpcd = pcd.voxel_down_sample(voxel_size)
+    downpcd = pcd.voxel_down_sample(voxel_size)
     
     o3d.io.write_point_cloud(output_ply_path, downpcd)
     
@@ -32,7 +32,7 @@ def las_to_ply(las_file_path, output_ply_path, voxel_size=0.1):
 def main():
 
       
-    las_file_path = "lidar-processing/data/santa_monica_col_scans/SaMo_topo_41.las
+    las_file_path = "./data/SaMo_topo_sep_tiles_colored.las"
 
     if not os.path.exists(las_file_path):
         print("File not found:", las_file_path)
@@ -43,7 +43,7 @@ def main():
         return
 
     
-    las_to_ply("input.las_file_path", "output.ply")
+    las_to_ply(las_file_path, "output.ply")
 
     
 
